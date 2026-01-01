@@ -1,0 +1,25 @@
+---
+import Header from '../partials/header.astro';
+import Footer from '../partials/footer.astro';
+import '../styles/global.css';
+
+const {page_title} = Astro.props;
+---
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+        <title>{page_title}</title>
+    </head>
+    <body>
+        <Header />
+        <h1>{page_title}</h1>
+        <slot />
+        <Footer />
+        <script>
+            import "../scripts/menu.js";
+        </script>
+    </body>
+</html>
